@@ -127,7 +127,7 @@ const getCityCoordinates = () => {
     fetch(Geo_Api)
         .then(res => res.json())
         .then(data => {
-            if (!data.length) return alert(`No coordinates found for ${cityName}`);
+            if (!data.length) return alert(`No coordinates found for ${cityName}.Please enter a valid city.`);
             const { name, lat, lon } = data[0];
             getWeatherDetails(name, lat, lon);
         })
